@@ -177,7 +177,7 @@ const Home = () => {
         .scroll-button {
           position: fixed;
           bottom: 28px;
-          left: 20px; // Changed from 'right' to 'left'
+          right: 20px; // Changed from 'right' to 'left'
           background-color: #0070f3;
           color: white;
           padding: 10px 20px;
@@ -186,7 +186,7 @@ const Home = () => {
         }
       `}</style>
 
-      <HolidayChaloAI />
+    {/*  <HolidayChaloAI /> */}
     </div>
   );
 };
