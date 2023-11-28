@@ -22,7 +22,7 @@ export default async function handler(req, res) {
         { role: 'system', content: 'You are a helpful assistant.' },
         { role: 'user', content: userInput },
       ],
-      max_tokens: 500,
+      max_tokens: 1800,
       presence_penalty: 0.0,
       frequency_penalty: 0.0,
     };
