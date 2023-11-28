@@ -26,15 +26,22 @@ const JobDetail = () => {
         <p className="detail"><strong>Job ID:</strong> {id}</p>
         <p className="detail"><strong>Title:</strong> {parsedJobDetails.title}</p>
         <p className="detail"><strong>Description:</strong> {parsedJobDetails.description}</p>
-        <p className="detail"><strong>Max Salary:</strong> {parsedJobDetails.salary_max}</p>
-        <p className="detail"><strong>Min Salary:</strong> {parsedJobDetails.salary_min}</p>
+        <p className="detail"><strong>Max Salary:</strong> 	£ {parsedJobDetails.salary_max}</p>
+        <p className="detail"><strong>Min Salary:</strong> 	£ {parsedJobDetails.salary_min}</p>
       </div>
 
       <div className="details-section">
         <p className="detail"><strong>Category:</strong> {parsedJobDetails.category.label}</p>
         <p className="detail"><strong>Job Type:</strong> {parsedJobDetails.contract_type}</p>
         <p className="detail"><strong>Location:</strong> {parsedJobDetails.location.area}</p>
-        <p className="detail"><strong>Location 2:</strong> {parsedJobDetails.location.display_name}</p>
+
+        <p className="detail"><strong>Latitude:</strong> {parsedJobDetails.latitude}</p>
+        <p className="detail"><strong>Longitude:</strong> {parsedJobDetails.longitude}</p>
+        
+
+
+
+        {/* <p className="detail"><strong>Location 2:</strong> {parsedJobDetails.location.display_name}</p> */}
         <p className="detail"><strong>Job Posted Time:</strong> {parsedJobDetails.created}</p>
       </div>
 
