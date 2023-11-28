@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
-
+import HolidayChaloAI from './ai';
 const Home = () => {
   const [jobs, setJobs] = useState([]);
   const [selectedLanguage, setSelectedLanguage] = useState('javascript'); // Default value
@@ -10,7 +10,8 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`/api/adzuna1?what=${selectedLanguage}`);
+      // const response = await axios.get(`/api/adzuna_282?what=${selectedLanguage}`);
+      const response = await axios.get(`/api/adzuna_282?what=${selectedLanguage}`);
       setJobs(response.data.results);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -32,6 +33,8 @@ const Home = () => {
       setShowScrollButton(false);
     }
   };
+
+  
 
   const handleLanguageChange = (e) => {
     setSelectedLanguage(e.target.value);
@@ -55,7 +58,7 @@ const Home = () => {
       <label>
         Select Language:
         <select value={selectedLanguage} onChange={handleLanguageChange}>
-          <option value="c++">C++</option>
+         
           <option value="javascript">JavaScript</option>
           <option value="python">Python</option>
           <option value="java">Java</option>
@@ -71,7 +74,7 @@ const Home = () => {
           <li key={job.id} className="job-item">
             <h3>{job.title}</h3>
             {/* <p>{job.description}</p> */}
-            <p>Salary: {job.salary_max}</p>
+            <p>Salary: 	£ {job.salary_max}</p>
             {/* <p>Min Salary: {job.salary_min}</p> */}
             {/* <p>Category: {job.category.label}</p> */}
             <p>Job Posted Time: {job.created}</p>
@@ -92,7 +95,7 @@ const Home = () => {
 
       {showScrollButton && (
         <div className="scroll-button" onClick={scrollToTop}>
-          &uarr; Scroll to Top
+          &uarr; 
         </div>
       )}
 
@@ -173,8 +176,8 @@ const Home = () => {
 
         .scroll-button {
           position: fixed;
-          bottom: 20px;
-          right: 20px;
+          bottom: 28px;
+          left: 20px; // Changed from 'right' to 'left'
           background-color: #0070f3;
           color: white;
           padding: 10px 20px;
@@ -182,6 +185,8 @@ const Home = () => {
           cursor: pointer;
         }
       `}</style>
+
+      <HolidayChaloAI />
     </div>
   );
 };
