@@ -35,6 +35,9 @@ const ApplicationForm = () => {
 
   return (
     <div>
+
+<h1 style={{textAlign:'center'}}>Please Fill the Below Form to Apply</h1>
+
       {isFormSubmitted ? (
         <SuccessPage formData={formData} />
       ) : (
@@ -87,7 +90,7 @@ const ApplicationForm = () => {
       )}
 
       {/* Styling using style jsx */}
-      <style jsx>{`
+      {/* <style jsx>{`
         div {
           max-width: 600px;
           margin: auto;
@@ -120,6 +123,75 @@ const ApplicationForm = () => {
         button:hover {
           background-color: #45a049;
         }
+      `}</style> */}
+
+       <style jsx>{`
+      .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+
+      h2 {
+        color: #4caf50;
+      }
+
+      strong {
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* ... (additional styling) */
+    `}</style>
+
+<style jsx>{`
+        .container {
+          max-width: 600px;
+          margin: auto;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          background-color: #fff;
+        }
+
+        form {
+          display: grid;
+          grid-gap: 16px;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 8px;
+          font-weight: bold;
+          color: #333;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 8px;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+
+        button {
+          width: 100%;
+          padding: 10px;
+          box-sizing: border-box;
+          background-color: #4caf50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: #45a049;
+        }
       `}</style>
     </div>
   );
@@ -139,15 +211,19 @@ const SuccessPage = ({ formData }) => {
 
       <div>
         <strong>Name:</strong> {formData.name}
+        <p></p>
       </div>
       <div>
         <strong>Email:</strong> {formData.email}
+        <p></p>
       </div>
       <div>
         <strong>Cover Letter:</strong> {formData.coverLetter}
+        <p></p>
       </div>
       <div>
         <strong>Resume:</strong> {formData.resume ? formData.resume.name : 'No file'}
+        <p></p>
       </div>
 
       <button onClick={handleGoHomeClick}>Go to Home Page</button>
